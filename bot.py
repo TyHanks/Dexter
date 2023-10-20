@@ -15,11 +15,10 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 
 @bot.event
 async def on_ready():
-    print("Bot is ready to be used!")
 
-    # Create an instance of the NewGameCog and add it to the bot
-    newgame_cog = NewGameCog(bot)
-    await bot.add_cog(newgame_cog)
+    await bot.add_cog(NewGameCog(bot))
+    print("NewGameCog :: LOADED")
+    print("Bot is ready to be used!")
 
 if __name__ == "__main__":
     bot.run(token)
